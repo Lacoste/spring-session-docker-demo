@@ -14,7 +14,9 @@
         <div class="container">
             <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
             <h2 th:inline="text">You are currently on server with name: [[${host}]]</h2>
-            <form th:action="@{/logout}" method="post">
+            <h2 th:inline="text">HTTP Host header: [[${#httpServletRequest.getHeader("host")}]]</h2>
+            <h2 th:inline="text">Session ID: [[${#httpServletRequest.getSession().getId()}]]</h2>
+           <form th:action="@{/logout}" method="post">
                 <input type="submit" value="Sign Out »" class="btn btn-primary btn-lg"/>
             </form>
         </div>
