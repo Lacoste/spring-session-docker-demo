@@ -29,4 +29,4 @@ TAG?=latest
 	@echo "Pushing image: $(REPO):dev"
 	@docker push $(REPO):dev
 
-  .PHONY: deps build build-static build-app build-image image clean test
+  .PHONY: build build-image build-dev push push-dev
