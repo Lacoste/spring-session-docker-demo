@@ -1,6 +1,6 @@
 COMMIT=`git rev-parse --short HEAD`
 JAR=`ls ./target/*.jar`
-APP=seshify
+APP=session-example
 REPO?=ahromis/$(APP)
 TAG?=latest
 
