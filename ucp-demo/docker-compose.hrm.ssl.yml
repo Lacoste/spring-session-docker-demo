@@ -27,10 +27,13 @@ services:
       secrets:
         - source: session-example_keystore.jks_v1
           target: keystore.jks
+          mode: 0400
         - source: session-example_key-store-password.txt_v1
           target: key-store-password.txt
+          mode: 0400
         - source: session-example_ssl-key-password.txt_v1
           target: key-password.txt
+          mode: 0400
 
 networks:
   backend:
