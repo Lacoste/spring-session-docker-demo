@@ -10,7 +10,7 @@ services:
         mode: replicated
         replicas: 1
     spring-session:
-      image: ahromis/seshify:0.1
+      image: ahromis/session-example:0.1
       ports:
         - 8443
       environment:
@@ -25,11 +25,11 @@ services:
           - com.docker.ucp.mesh.http.1=external_route=http://${DOMAIN},redirect=https://${DOMAIN}
           - com.docker.ucp.mesh.http.8443=external_route=sni://${DOMAIN},internal_port=8443
       secrets:
-        - source: seshify_keystore.jks_v1
+        - source: session-example_keystore.jks_v1
           target: keystore.jks
-        - source: seshify_key-store-password.txt_v1
+        - source: session-example_key-store-password.txt_v1
           target: key-store-password.txt
-        - source: seshify_ssl-key-password.txt_v1
+        - source: session-example_ssl-key-password.txt_v1
           target: key-password.txt
 
 networks:
@@ -40,9 +40,9 @@ networks:
       name: ucp-hrm
 
 secrets:
-    seshify_keystore.jks_v1:
+    session-example_keystore.jks_v1:
         external: true
-    seshify_key-store-password.txt_v1:
+    session-example_key-store-password.txt_v1:
         external: true
-    seshify_ssl-key-password.txt_v1:
+    session-example_ssl-key-password.txt_v1:
         external: true

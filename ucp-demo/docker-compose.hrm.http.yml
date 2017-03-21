@@ -10,7 +10,7 @@ services:
         mode: replicated
         replicas: 1
     spring-session:
-      image: ahromis/seshify:0.1
+      image: ahromis/session-example:0.1
       ports:
         - 8080
       networks:
