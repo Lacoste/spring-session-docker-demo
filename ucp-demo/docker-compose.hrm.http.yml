@@ -9,7 +9,7 @@ services:
       deploy:
         mode: replicated
         replicas: 1
-    spring-session:
+    session-example:
       image: ahromis/session-example:0.1
       ports:
         - 8080
