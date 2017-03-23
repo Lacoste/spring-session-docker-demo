@@ -11,7 +11,7 @@ if [ -d "/run/secrets" ]; then
       exit 2
   else
       echo "Turning key-store-password and key-password into environment variables for use with spring."
-      export KEY_STORE_PASSWORD="$(cat /run/secrets/key-store-password.txt)"
+      export KEY_STORE_PASSWORD="$(cat /run/secrets/keystore-password.txt)"
       export KEY_PASSWORD="$(cat /run/secrets/key-password.txt)"
   fi
 else
