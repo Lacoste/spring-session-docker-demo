@@ -5,7 +5,7 @@ services:
       image: redis:3.0.7
       hostname: redis
       networks:
-        - backend
+        - back-end
       deploy:
         mode: replicated
         replicas: 1
@@ -14,7 +14,7 @@ services:
       ports:
         - 8080
       networks:
-        - backend
+        - back-end
         - ucp-hrm
       deploy:
         mode: replicated
@@ -23,7 +23,7 @@ services:
           - com.docker.ucp.mesh.http.8080=external_route=http://${DOMAIN},internal_port=8080,sticky_sessions=SESSION
 
 networks:
-  backend:
+  back-end:
     driver: overlay
   ucp-hrm:
     external:

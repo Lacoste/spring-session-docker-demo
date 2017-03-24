@@ -5,7 +5,7 @@ services:
       image: redis:3.0.7
       hostname: redis
       networks:
-        - backend
+        - back-end
       deploy:
         mode: replicated
         replicas: 1
@@ -16,7 +16,7 @@ services:
       environment:
         - SPRING_PROFILES_ACTIVE=https
       networks:
-        - backend
+        - back-end
         - ucp-hrm
       deploy:
         mode: replicated
@@ -36,7 +36,7 @@ services:
           mode: 0400
 
 networks:
-  backend:
+  back-end:
     driver: overlay
   ucp-hrm:
     external:
